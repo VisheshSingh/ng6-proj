@@ -1,9 +1,11 @@
 <h1>Posts</h1>
-<ul>
-  <li *ngFor="let post of posts">
-    <strong>
-      <a routerLink="">{{post.title}}</a>
-    </strong>
-    <p>{{post.body}}</p>
-  </li>
-</ul>
+<div *ngIf="posts">
+  <ul [@listStagger]="posts">
+    <li *ngFor="let post of posts">
+      <strong>
+        <a routerLink="">{{post.title}}</a>
+      </strong>
+      <p>{{post.body}}</p>
+    </li>
+  </ul>
+</div>
